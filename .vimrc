@@ -3,6 +3,8 @@ source ~/.vim/vimrc_py
 set autoindent
 set smarttab
 set ts=4
+set sw=4
+set et
 set number
 set cursorline
 set nowrap
