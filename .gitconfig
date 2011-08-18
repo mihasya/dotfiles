@@ -1,0 +1,7 @@
+[user]
+	name = mihasya
+	email = m@mihasya.com
+[core]
+	editor = vim
+[color]
+	ui = true
