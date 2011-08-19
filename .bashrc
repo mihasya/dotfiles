@@ -36,7 +36,13 @@ elif [ "$HOSTNAME" == "mihasya.xen.prgmr.com" ]; then
 	export HOSTCOLOR="\e[1;31;1m"
 fi
 
-export PS1="[\t $USERCOLOR\u\e[37;1m @ $HOSTCOLOR\H\e[0m] \w \n# "
+if [ `id` = 0 ]; then
+    DONG="#"
+else
+    DONG="$"
+fi
+
+export PS1="[\t $USERCOLOR\u\e[37;1m @ $HOSTCOLOR\H\e[0m] \w \n$DONG "
 export MYSQL_PS1="(\u@\h) [\d] > "
 
 if [ -f /etc/profile.d/sandbox.sh ]; then
