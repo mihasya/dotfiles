@@ -47,4 +47,3 @@ complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g 
 complete -cf sudo
 
 export TERM='xterm-256color'
-xset b off
