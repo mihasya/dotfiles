@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo -n "please enter your password: "
+read -s pass
+source <(curl -s -u mihasya:$pass http://mihasya.com/turtle/turtle | gpg -d)

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SH_FILES="bashrc bash_aliases zshrc zsh.d gitconfig gitignore vimrc vim gvimrc ackrc screenrc ctags"
+SH_FILES="bashrc bash_aliases zshrc zsh.d gitconfig gitignore vimrc vim gvimrc ackrc screenrc ctags turtle"
 BACKUP="backups/`date +'%Y%m%d-%H%M%S'`"
 SHDIR=$PWD
 
