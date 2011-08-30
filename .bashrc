@@ -36,7 +36,7 @@ elif [ "$HOSTNAME" == "mihasya.xen.prgmr.com" ]; then
 	export HOSTCOLOR="\e[1;31;1m"
 fi
 
-if [ `id` = 0 ]; then
+if [ `id -u` == 0 ]; then
     DONG="#"
 else
     DONG="$"
