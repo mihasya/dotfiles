@@ -53,3 +53,6 @@ complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g 
 complete -cf sudo
 
 export TERM='xterm-256color'
+
+# turn off flow control so that vim can catch ctrl-s
+stty -ixoff

@@ -21,3 +21,7 @@ augroup END
 au CursorHold * checktime
 au WinEnter * checktime
 au BufWinEnter * checktime
+
+"ctrl-s mapping
+imap <C-s> <Esc>:w<CR>a
+nmap <C-s> :w<CR>
