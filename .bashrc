@@ -56,3 +56,5 @@ export TERM='xterm-256color'
 
 # turn off flow control so that vim can catch ctrl-s
 stty -ixoff
+
+. ~/.bash_aliases
