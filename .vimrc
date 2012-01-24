@@ -17,6 +17,9 @@ augroup mkd
 
 augroup END
 
+augroup filetype
+  au! BufRead,BufNewFile *.proto setfiletype proto
+augroup end
 
 au CursorHold * checktime
 au WinEnter * checktime
