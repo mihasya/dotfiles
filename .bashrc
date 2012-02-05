@@ -42,6 +42,11 @@ else
     DONG="$"
 fi
 
+if [ $CONQUE == 1 ]; then
+    DONG="(conque) $DONG"
+fi
+
+
 export PS1="[\t $USERCOLOR\u\e[37;1m @ $HOSTCOLOR\H\e[0m] \w \n$DONG "
 export MYSQL_PS1="(\u@\h) [\d] > "
 
