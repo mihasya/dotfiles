@@ -57,6 +57,6 @@ export TERM='xterm-256color'
 # turn off flow control so that vim can catch ctrl-s
 stty -ixoff
 
-export PATH="$PATH:~/.bin"
+export PATH="/opt/manual/bin:$PATH:~/.bin"
 
 . ~/.bash_aliases
