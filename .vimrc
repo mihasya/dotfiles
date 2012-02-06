@@ -8,6 +8,7 @@ set et
 set number
 set cursorline
 set nowrap
+set backspace=indent,eol,start
 
 colorscheme mihasya
 
