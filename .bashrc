@@ -42,7 +42,7 @@ else
     DONG="$"
 fi
 
-if [ $CONQUE == 1 ]; then
+if [ "x$CONQUE" != "x" ]; then
     DONG="(conque) $DONG"
 fi
 
