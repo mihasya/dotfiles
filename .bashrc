@@ -46,8 +46,7 @@ if [ "x$CONQUE" != "x" ]; then
     DONG="(conque) $DONG"
 fi
 
-
-export PS1="[\t $USERCOLOR\u\e[37;1m @ $HOSTCOLOR\H\e[0m] \w \n$DONG "
+refresh_prompt;
 export MYSQL_PS1="(\u@\h) [\d] > "
 
 if [ -f /etc/profile.d/sandbox.sh ]; then
