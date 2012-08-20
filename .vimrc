@@ -22,6 +22,8 @@ augroup filetype
   au! BufRead,BufNewFile *.proto setfiletype proto
 augroup end
 
+au! BufRead,BufNewFile *.json set filetype=json
+
 au CursorHold * checktime
 au WinEnter * checktime
 au BufWinEnter * checktime
