@@ -41,5 +41,25 @@ function mvn_get() {
 
 function refresh_prompt() {
     export MVN=`mvn_get`
-    export PS1="[\t $USERCOLOR\u\e[37;1m @ $HOSTCOLOR\H\e[0m :: mvn: $MVN] \w \n$DONG "
+    export PS1="[\t $USERCOLOR\u\e[37;1m @ $HOSTCOLOR\H\e[0m :: mvn: $MVN python: `basename $VIRTUAL_ENV` ] \w \n$DONG "
+}
+
+# load up our current python env, similar to mvn_select
+function load_pyenv() {
+    if [ -L ~/pyenv/current ]; then
+        PYENV=`readlink -n ~/pyenv/current`
+        PYENV="$HOME/pyenv/$PYENV"
+    elif [ -f ~/pyenv/default ]; then
+        PYENV="$HOME/pyenv/default"
+    fi
+    if [ "x$PYENV" != "x" ]; then
+        . "$PYENV/bin/activate"
+        refresh_prompt;
+    fi
+}
+
+function select_pyenv() {
+    # TODO
+    echo;
+}
 }

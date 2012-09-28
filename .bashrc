@@ -46,7 +46,11 @@ if [ "x$CONQUE" != "x" ]; then
     DONG="(conque) $DONG"
 fi
 
+load_pyenv;
+
 refresh_prompt;
+
+
 export MYSQL_PS1="(\u@\h) [\d] > "
 
 if [ -f /etc/profile.d/sandbox.sh ]; then
@@ -62,5 +66,3 @@ export TERM='xterm-256color'
 stty -ixoff
 
 export PATH="/opt/manual/bin:$PATH:~/bin"
-
-. ~/.bash_aliases
