@@ -23,6 +23,7 @@ augroup filetype
 augroup end
 
 au! BufRead,BufNewFile *.json set filetype=json
+au BufRead,BufNewFile *.g set syntax=antlr3
 
 au CursorHold * checktime
 au WinEnter * checktime
@@ -31,3 +32,7 @@ au BufWinEnter * checktime
 "ctrl-s mapping
 imap <C-s> <Esc>:w<CR>a
 nmap <C-s> :w<CR>
+
+"I don't want fucking swap files
+set backupdir=/tmp
+set directory=/tmp
