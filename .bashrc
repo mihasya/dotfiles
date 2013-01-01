@@ -66,3 +66,7 @@ export TERM='xterm-256color'
 stty -ixoff
 
 export PATH="/opt/manual/bin:$PATH:~/bin"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix findutils)/bin:$PATH"
+export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
+export MANPATH="$(brew --prefix findutils)/share/man:$MANPATH"
