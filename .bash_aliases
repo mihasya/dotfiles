@@ -62,4 +62,3 @@ function select_pyenv() {
     # TODO
     echo;
 }
-}
