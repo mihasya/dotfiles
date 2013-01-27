@@ -36,3 +36,7 @@ nmap <C-s> :w<CR>
 "I don't want fucking swap files
 set backupdir=/tmp
 set directory=/tmp
+
+set rtp+=/usr/local/go/misc/vim
+filetype plugin indent on
+syntax on
