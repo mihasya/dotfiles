@@ -38,5 +38,6 @@ set backupdir=/tmp
 set directory=/tmp
 
 set rtp+=/usr/local/go/misc/vim
+set rtp+=/usr/go/misc/vim
 filetype plugin indent on
 syntax on
