@@ -73,3 +73,4 @@ if [ "no" != $BREW_EXISTS ]; then
     export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
     export MANPATH="$(brew --prefix findutils)/share/man:$MANPATH"
 fi
+export GOPATH="$HOME"
