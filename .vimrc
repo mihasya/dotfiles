@@ -29,6 +29,9 @@ au CursorHold * checktime
 au WinEnter * checktime
 au BufWinEnter * checktime
 
+autocmd FileType go compiler golang
+let g:golang_goroot = "/usr/local/go"
+
 "ctrl-s mapping
 imap <C-s> <Esc>:w<CR>a
 nmap <C-s> :w<CR>
