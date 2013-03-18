@@ -1,2 +1,3 @@
 Bundle 'dgryski/vim-godef'
 Bundle 'tpope/vim-sleuth'
+Bundle 'scrooloose/syntastic'
