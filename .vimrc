@@ -1,4 +1,6 @@
-source ~/.vim/vimrc_py
+filetype off
+
+"source ~/.vim/vimrc_py
 
 set autoindent
 set smarttab
@@ -42,7 +44,12 @@ set directory=/tmp
 
 set rtp+=/usr/local/go/misc/vim
 set rtp+=/usr/go/misc/vim
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+source ./.vim_bundles
+
 filetype plugin indent on
 syntax on
-
-execute pathogen#infect()
