@@ -1,1 +1,2 @@
 Bundle 'dgryski/vim-godef'
+Bundle 'tpope/vim-sleuth'
