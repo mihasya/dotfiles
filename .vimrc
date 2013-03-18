@@ -1,4 +1,13 @@
+set nocompatible
 filetype off
+
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+source ./.vim_bundles
+
 
 "source ~/.vim/vimrc_py
 
@@ -31,8 +40,8 @@ au CursorHold * checktime
 au WinEnter * checktime
 au BufWinEnter * checktime
 
-autocmd FileType go compiler golang
-let g:golang_goroot = "/usr/local/go"
+"*autocmd FileType go compiler golang
+"let g:golang_goroot = "/usr/local/go"
 
 "ctrl-s mapping
 imap <C-s> <Esc>:w<CR>a
@@ -44,12 +53,6 @@ set directory=/tmp
 
 set rtp+=/usr/local/go/misc/vim
 set rtp+=/usr/go/misc/vim
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-
-source ./.vim_bundles
 
 filetype plugin indent on
 syntax on
