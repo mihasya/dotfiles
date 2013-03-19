@@ -6,7 +6,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-source ./.vim_bundles
+source ~/.vim_bundles
 
 
 "source ~/.vim/vimrc_py
@@ -56,3 +56,6 @@ set rtp+=/usr/go/misc/vim
 
 filetype plugin indent on
 syntax on
+
+" Syntastic options
+let g:syntastic_auto_loc_list=1
