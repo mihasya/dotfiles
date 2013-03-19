@@ -20,6 +20,8 @@ set number
 set cursorline
 set nowrap
 set backspace=indent,eol,start
+set splitbelow
+set laststatus=2
 
 colorscheme mihasya
 
@@ -65,4 +67,6 @@ source ~/.vim/tagbar_config
 filetype plugin on
 let $PATH=$PATH . ":/Users/mihasya/bin:/home/mihasya/bin"
 
+" supertab completion options
 let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabClosePreviewOnPopupClose = 1
