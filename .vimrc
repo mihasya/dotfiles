@@ -70,3 +70,6 @@ let $PATH=$PATH . ":/Users/mihasya/bin:/home/mihasya/bin"
 " supertab completion options
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabClosePreviewOnPopupClose = 1
+
+" ctrlp
+let g:ctrlp_working_path_mode = 'r'
