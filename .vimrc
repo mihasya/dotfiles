@@ -62,3 +62,7 @@ let g:syntastic_auto_loc_list=1
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
 source ~/.vim/tagbar_config
+filetype plugin on
+let $PATH=$PATH . ":/Users/mihasya/bin:/home/mihasya/bin"
+
+let g:SuperTabDefaultCompletionType = "context"

@@ -36,3 +36,4 @@ hi Number ctermfg=176
 hi String ctermfg=176
 " hi string ctermfg=244
 " hi todo ctermbg=60
+hi Pmenu ctermbg=239

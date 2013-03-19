@@ -2,7 +2,7 @@ Bundle 'dgryski/vim-godef'
 Bundle 'scrooloose/syntastic'
 Bundle 'jstemmer/gotags'
 Bundle 'majutsushi/tagbar'
-
+Bundle 'ervandew/supertab'
 
 "the tpope section
 Bundle 'tpope/vim-sleuth'
