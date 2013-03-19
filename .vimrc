@@ -59,3 +59,6 @@ syntax on
 
 " Syntastic options
 let g:syntastic_auto_loc_list=1
+" Tagbar
+nmap <F8> :TagbarToggle<CR>
+source ~/.vim/tagbar_config

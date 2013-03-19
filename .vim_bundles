@@ -1,3 +1,5 @@
 Bundle 'dgryski/vim-godef'
 Bundle 'tpope/vim-sleuth'
 Bundle 'scrooloose/syntastic'
+Bundle 'jstemmer/gotags'
+Bundle 'majutsushi/tagbar'
