@@ -6,7 +6,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-source ~/.vim_bundles
+source ~/.vim/my_bundles
 
 
 "source ~/.vim/vimrc_py
