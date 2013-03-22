@@ -68,6 +68,16 @@ echo -ne "\033]6;1;bg;red;brightness;$((0x${COLOR:0:2}))\a"
 echo -ne "\033]6;1;bg;green;brightness;$((0x${COLOR:2:2}))\a"
 echo -ne "\033]6;1;bg;blue;brightness;$((0x${COLOR:4:2}))\a"
 
+# color the tabs thanks to iTerm being awesome
+if [ -f /etc/issue ]; then
+    COLOR=`hostname | md5sum`
+else
+    COLOR=`md5 -q -s $HOSTNAME`
+fi
+echo -ne "\033]6;1;bg;red;brightness;$((0x${COLOR:0:2}))\a"
+echo -ne "\033]6;1;bg;green;brightness;$((0x${COLOR:2:2}))\a"
+echo -ne "\033]6;1;bg;blue;brightness;$((0x${COLOR:4:2}))\a"
+
 export MYSQL_PS1="(\u@\h) [\d] > "
 
 if [ -f /etc/profile.d/sandbox.sh ]; then
