@@ -50,10 +50,23 @@ load_pyenv;
 
 refresh_prompt;
 
+# awesome iTerm2 things http://www.iterm2.com/#/section/documentation/escape_codes
 # do something special for linux hosts
 if [ -f /etc/issue ]; then
     echo -e "\033]Ph25002E\033\\"
+else
+    echo -e "\033]Ph000000\033\\"
 fi
+
+# color the tabs thanks to iTerm being awesome
+if [ -f /etc/issue ]; then
+    COLOR=`hostname | md5sum`
+else
+    COLOR=`md5 -q -s $HOSTNAME`
+fi
+echo -ne "\033]6;1;bg;red;brightness;$((0x${COLOR:0:2}))\a"
+echo -ne "\033]6;1;bg;green;brightness;$((0x${COLOR:2:2}))\a"
+echo -ne "\033]6;1;bg;blue;brightness;$((0x${COLOR:4:2}))\a"
 
 export MYSQL_PS1="(\u@\h) [\d] > "
 
