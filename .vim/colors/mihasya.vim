@@ -22,9 +22,8 @@ let colors_name = "mihasya"
 
 " vim: sw=2
 set background=dark
-hi Normal  ctermbg=0
-hi NonText ctermbg=0 ctermfg=0
-hi LineNr 		cterm=none ctermbg=0 ctermfg=245 guibg=none gui=none
+hi NonText ctermfg=0
+hi LineNr 		cterm=none ctermfg=245 guibg=none gui=none
 hi CursorLine   cterm=none ctermbg=236 ctermfg=none guibg=darkred guifg=none
 hi VertSplit    cterm=none ctermbg=240 ctermfg=240
 

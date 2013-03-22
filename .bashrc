@@ -50,6 +50,10 @@ load_pyenv;
 
 refresh_prompt;
 
+# do something special for linux hosts
+if [ -f /etc/issue ]; then
+    echo -e "\033]Ph25002E\033\\"
+fi
 
 export MYSQL_PS1="(\u@\h) [\d] > "
 
