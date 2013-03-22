@@ -48,7 +48,7 @@ fi
 
 load_pyenv;
 
-refresh_prompt;
+export PROMPT_COMMAND=refresh_prompt;
 
 # awesome iTerm2 things http://www.iterm2.com/#/section/documentation/escape_codes
 # do something special for linux hosts
