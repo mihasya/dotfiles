@@ -93,7 +93,7 @@ stty -ixoff
 
 export PATH="/opt/manual/bin:$PATH:~/bin"
 BREW_EXISTS="$(brew --version > /dev/null 2>&1 || echo no)"
-if [ "no" != $BREW_EXISTS ]; then
+if [ "xno" != "x$BREW_EXISTS" ]; then
     export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
     export PATH="$(brew --prefix findutils)/bin:$PATH"
     export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
