@@ -48,35 +48,29 @@ fi
 
 load_pyenv;
 
+function refresh_prompt() {
+    export MVN=`mvn_get`
+    export PS1="[\t $USERCOLOR\u\e[37;1m @ $HOSTCOLOR\H\e[0m :: mvn: $MVN python: `basename $VIRTUAL_ENV` ] \w \n$DONG "
+    # awesome iTerm2 things http://www.iterm2.com/#/section/documentation/escape_codes
+    # do something special for linux hosts
+    if [ -f /etc/issue ]; then
+	echo -e "\033]Ph25002E\033\\"
+    else
+	echo -e "\033]Ph000000\033\\"
+    fi
+
+    # color the tabs thanks to iTerm being awesome
+    if [ -f /etc/issue ]; then
+	COLOR=`hostname | md5sum`
+    else
+	COLOR=`md5 -q -s $HOSTNAME`
+    fi
+    echo -ne "\033]6;1;bg;red;brightness;$((0x${COLOR:0:2}))\a"
+    echo -ne "\033]6;1;bg;green;brightness;$((0x${COLOR:2:2}))\a"
+    echo -ne "\033]6;1;bg;blue;brightness;$((0x${COLOR:4:2}))\a"
+}
+
 export PROMPT_COMMAND=refresh_prompt;
-
-# awesome iTerm2 things http://www.iterm2.com/#/section/documentation/escape_codes
-# do something special for linux hosts
-if [ -f /etc/issue ]; then
-    echo -e "\033]Ph25002E\033\\"
-else
-    echo -e "\033]Ph000000\033\\"
-fi
-
-# color the tabs thanks to iTerm being awesome
-if [ -f /etc/issue ]; then
-    COLOR=`hostname | md5sum`
-else
-    COLOR=`md5 -q -s $HOSTNAME`
-fi
-echo -ne "\033]6;1;bg;red;brightness;$((0x${COLOR:0:2}))\a"
-echo -ne "\033]6;1;bg;green;brightness;$((0x${COLOR:2:2}))\a"
-echo -ne "\033]6;1;bg;blue;brightness;$((0x${COLOR:4:2}))\a"
-
-# color the tabs thanks to iTerm being awesome
-if [ -f /etc/issue ]; then
-    COLOR=`hostname | md5sum`
-else
-    COLOR=`md5 -q -s $HOSTNAME`
-fi
-echo -ne "\033]6;1;bg;red;brightness;$((0x${COLOR:0:2}))\a"
-echo -ne "\033]6;1;bg;green;brightness;$((0x${COLOR:2:2}))\a"
-echo -ne "\033]6;1;bg;blue;brightness;$((0x${COLOR:4:2}))\a"
 
 export MYSQL_PS1="(\u@\h) [\d] > "
 

@@ -25,7 +25,6 @@ function mvn_select() {
     SETTINGS_PATH="$HOME/.m2/settings.xml_$@"
     if [ -f "$SETTINGS_PATH" ]; then
         ln -s $SETTINGS_PATH ~/.m2/settings.xml
-        refresh_prompt
     else
         echo "No mvn settings available for $@";
         return;
@@ -39,10 +38,6 @@ function mvn_get() {
     fi
 }
 
-function refresh_prompt() {
-    export MVN=`mvn_get`
-    export PS1="[\t $USERCOLOR\u\e[37;1m @ $HOSTCOLOR\H\e[0m :: mvn: $MVN python: `basename $VIRTUAL_ENV` ] \w \n$DONG "
-}
 
 # load up our current python env, similar to mvn_select
 function load_pyenv() {
@@ -54,7 +49,6 @@ function load_pyenv() {
     fi
     if [ "x$PYENV" != "x" ]; then
         . "$PYENV/bin/activate"
-        refresh_prompt;
     fi
 }
 
