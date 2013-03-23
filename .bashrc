@@ -50,13 +50,18 @@ load_pyenv;
 
 function refresh_prompt() {
     export MVN=`mvn_get`
-    export PS1="[\t $USERCOLOR\u\e[37;1m @ $HOSTCOLOR\H\e[0m :: mvn: $MVN python: `basename $VIRTUAL_ENV` ] \w \n$DONG "
+    if [ "x$VIRTUAL_ENV" = "x" ]; then
+	PY="base"
+    else
+	PY=`basename $VIRTUAL_ENV`
+    fi
+    export PS1="[\t $USERCOLOR\u\e[37;1m @ $HOSTCOLOR\H\e[0m :: mvn: $MVN python: $PY ] \w \n$DONG "
     # awesome iTerm2 things http://www.iterm2.com/#/section/documentation/escape_codes
     # do something special for linux hosts
     if [ -f /etc/issue ]; then
-	echo -e "\033]Ph25002E\033\\"
+	echo -ne "\033]Ph25002E\033\\"
     else
-	echo -e "\033]Ph000000\033\\"
+	echo -ne "\033]Ph000000\033\\"
     fi
 
     # color the tabs thanks to iTerm being awesome
