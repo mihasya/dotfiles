@@ -4,6 +4,8 @@ Bundle 'jstemmer/gotags'
 Bundle 'majutsushi/tagbar'
 Bundle 'ervandew/supertab'
 Bundle 'kien/ctrlp.vim'
+Bundle 'yuratomo/dbg.vim'
+Bundle 'Shougo/vimproc'
 
 "the tpope section
 Bundle 'tpope/vim-sleuth'
