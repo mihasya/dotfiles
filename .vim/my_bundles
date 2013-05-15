@@ -6,6 +6,8 @@ Bundle 'ervandew/supertab'
 Bundle 'kien/ctrlp.vim'
 Bundle 'yuratomo/dbg.vim'
 Bundle 'Shougo/vimproc'
+Bundle 'benmills/vimux'
+
 
 "the tpope section
 Bundle 'tpope/vim-sleuth'
