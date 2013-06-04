@@ -8,6 +8,11 @@ Bundle 'yuratomo/dbg.vim'
 Bundle 'Shougo/vimproc'
 Bundle 'benmills/vimux'
 
+"snipmate + deps
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "honza/vim-snippets"
+Bundle "garbas/vim-snipmate"
 
 "the tpope section
 Bundle 'tpope/vim-sleuth'
