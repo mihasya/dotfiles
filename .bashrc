@@ -91,7 +91,7 @@ export TERM='xterm-256color'
 # turn off flow control so that vim can catch ctrl-s
 stty -ixoff
 
-export PATH="$HOME/bin:/opt/manual/bin:$PATH:/usr/go/bin"
+export PATH="$HOME/bin:/opt/manual/bin:$PATH"
 BREW_EXISTS="$(brew --version > /dev/null 2>&1 || echo no)"
 if [ "xno" != "x$BREW_EXISTS" ]; then
     export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
@@ -100,3 +100,10 @@ if [ "xno" != "x$BREW_EXISTS" ]; then
     export MANPATH="$(brew --prefix findutils)/share/man:$MANPATH"
 fi
 export GOPATH="$HOME"
+
+if [ -f /usr/go/bin/go ]; then
+    export PATH="$PATH:/usr/go/bin"
+    export GOROOT="/usr/go"
+elif [ -f /usr/local/go/bin/go ]; then
+    export PATH="$PATH:/usr/local/go/bin"
+fi
