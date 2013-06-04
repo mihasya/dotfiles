@@ -22,6 +22,7 @@ set nowrap
 set backspace=indent,eol,start
 set splitbelow
 set laststatus=2
+set incsearch
 
 colorscheme mihasya
 
