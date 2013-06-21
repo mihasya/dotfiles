@@ -5,5 +5,5 @@ nmap <buffer> gt :call GoFindOrCreateTest()<CR>
 
 " automatically call gofmt on every save
 augroup gofmt
-	autocmd BufWritePre,FileWritePre,FileAppendPre 		*.go Fmt
+	autocmd BufWritePre,FileWritePre,FileAppendPre silent		*.go Fmt
 augroup END
