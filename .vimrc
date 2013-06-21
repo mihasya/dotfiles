@@ -76,6 +76,6 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 let g:ctrlp_working_path_mode = 'r'
 
 " running stuff via tmux
-nmap <buffer> gr :call VimuxRunCommand("")<left><left>
-nmap <buffer> grr :VimuxRunLastCommand<cr>
-nmap <buffer> grc :VimuxCloseRunner<cr>
+nmap gr :call VimuxRunCommand("")<left><left>
+nmap grr :VimuxRunLastCommand<cr>
+nmap grc :VimuxCloseRunner<cr>
