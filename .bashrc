@@ -107,3 +107,11 @@ if [ -f /usr/go/bin/go ]; then
 elif [ -f /usr/local/go/bin/go ]; then
     export PATH="$PATH:/usr/local/go/bin"
 fi
+
+export EDITOR=vim
+set -o vi
+
+# grep niceness
+# TODO: does this work on osx? test.. man page would seem to say no
+export GREP_OPTIONS="--binary-files=without-match --directories=skip --color=auto"
+export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=01;32:ln=01;37:bn=32:se=36"
