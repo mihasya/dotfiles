@@ -66,7 +66,7 @@ let g:syntastic_auto_loc_list=1
 nmap <F8> :TagbarToggle<CR>
 source ~/.vim/tagbar_config
 filetype plugin on
-let $PATH=$PATH . ":/Users/mihasya/bin:/home/mihasya/bin"
+let $PATH=$PATH . ":" . $HOME . "/bin"
 
 " supertab completion options
 let g:SuperTabDefaultCompletionType = "context"
