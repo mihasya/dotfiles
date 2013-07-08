@@ -79,3 +79,7 @@ let g:ctrlp_working_path_mode = 'r'
 nmap gr :call VimuxRunCommand("")<left><left>
 nmap grr :VimuxRunLastCommand<cr>
 nmap grc :VimuxCloseRunner<cr>
+
+" my preferred shortcuts for navigating autocomplete dropdown
+:inoremap <expr> <C-J> pumvisible() ? '<C-N>' : '<C-J>'
+:inoremap <expr> <C-K> pumvisible() ? '<C-P>' : '<C-K>'
