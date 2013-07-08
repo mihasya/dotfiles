@@ -91,7 +91,7 @@ export TERM='xterm-256color'
 # turn off flow control so that vim can catch ctrl-s
 stty -ixoff
 
-export PATH="$HOME/bin:/opt/manual/bin:$PATH"
+export PATH="$HOME/bin:/opt/manual/bin:$PATH:$HOME/bin"
 BREW_EXISTS="$(brew --version > /dev/null 2>&1 || echo no)"
 if [ "xno" != "x$BREW_EXISTS" ]; then
     export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
