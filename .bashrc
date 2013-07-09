@@ -48,6 +48,17 @@ fi
 
 load_pyenv;
 
+# find the correct location of git-prompt.sh for this system
+for candidate in /usr/local/etc/bash_completion.d /usr/share/git-core /usr/local/share/doc/git-core/contrib/completion; do
+    if [ -e "${candidate}/git-prompt.sh" ]; then
+	source ${candidate}/git-prompt.sh 
+	git_prompt='$(__git_ps1 " \[\033[1;32m\](%s)\[\033[0m\]")'
+	break
+    else
+	git_prompt=""
+    fi
+done
+
 function refresh_prompt() {
     export MVN=`mvn_get`
     if [ "x$VIRTUAL_ENV" = "x" ]; then
@@ -55,7 +66,7 @@ function refresh_prompt() {
     else
 	PY=`basename $VIRTUAL_ENV`
     fi
-    export PS1="[\t $USERCOLOR\u\e[37;1m @ $HOSTCOLOR\H\e[0m :: mvn: $MVN python: $PY ] \w \n$DONG "
+    export PS1="[\t $USERCOLOR\u\e[37;1m @ $HOSTCOLOR\H\e[0m :: mvn: $MVN python: $PY ] \w \n${git_prompt} $DONG "
     # awesome iTerm2 things http://www.iterm2.com/#/section/documentation/escape_codes
     # do something special for linux hosts
     if [ -f /etc/issue ]; then
@@ -115,3 +126,6 @@ set -o vi
 # TODO: does this work on osx? test.. man page would seem to say no
 export GREP_OPTIONS="--binary-files=without-match --directories=skip --color=auto"
 export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=01;32:ln=01;37:bn=32:se=36"
+
+# bash completion for git, yo
+source ~/.git-completion.bash
