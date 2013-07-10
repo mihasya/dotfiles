@@ -49,9 +49,13 @@ fi
 load_pyenv;
 
 # find the correct location of git-prompt.sh for this system
-for candidate in /usr/local/etc/bash_completion.d /usr/share/git-core /usr/local/share/doc/git-core/contrib/completion; do
+for candidate in /usr/local/etc/bash_completion.d /usr/share/git-core /usr/local/share/doc/git-core/contrib/completion /etc/bash_completion.d; do
     if [ -e "${candidate}/git-prompt.sh" ]; then
 	source ${candidate}/git-prompt.sh 
+	git_prompt='$(__git_ps1 " \[\033[1;32m\](%s)\[\033[0m\]")'
+	break
+    elif [ -e "${candidate}/git" ]; then
+	source ${candidate}/git
 	git_prompt='$(__git_ps1 " \[\033[1;32m\](%s)\[\033[0m\]")'
 	break
     else
@@ -117,6 +121,7 @@ if [ -f /usr/go/bin/go ]; then
     export GOROOT="/usr/go"
 elif [ -f /usr/local/go/bin/go ]; then
     export PATH="$PATH:/usr/local/go/bin"
+    export GOROOT="/usr/local/go"
 fi
 
 export EDITOR=vim
