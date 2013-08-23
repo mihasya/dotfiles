@@ -22,3 +22,14 @@ Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-commentary'
+
+Bundle 'scrooloose/nerdtree'
+
+"time tracking with wakati.me
+Bundle 'wakatime/vim-wakatime'
+
+Bundle 'airblade/vim-gitgutter'
+
+Bundle 'bling/vim-airline'
+
+Bundle 'tpope/vim-fugitive'
