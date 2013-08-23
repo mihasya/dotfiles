@@ -56,3 +56,15 @@ function select_pyenv() {
     # TODO
     echo;
 }
+
+workhere ()
+{
+    deactivate > /dev/null 2>&1 && echo "Deactivated previous virtualenv";
+    venv=$(pwd | sed -e 's#/#_#g');
+    mkvirtualenv ${venv} || workon ${venv};
+    if [[ -s "requirements.txt" ]]; then
+        for package in $(cat requirements.txt); do
+            pip install ${package};
+        done;
+    fi
+}

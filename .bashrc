@@ -52,25 +52,37 @@ load_pyenv;
 for candidate in /usr/local/etc/bash_completion.d /usr/share/git-core /usr/local/share/doc/git-core/contrib/completion /etc/bash_completion.d; do
     if [ -e "${candidate}/git-prompt.sh" ]; then
 	source ${candidate}/git-prompt.sh 
-	git_prompt='$(__git_ps1 " \[\033[1;32m\](%s)\[\033[0m\]")'
+	g=true
 	break
     elif [ -e "${candidate}/git" ]; then
 	source ${candidate}/git
-	git_prompt='$(__git_ps1 " \[\033[1;32m\](%s)\[\033[0m\]")'
+	g=true
 	break
     else
-	git_prompt=""
+	g=false
     fi
 done
 
 function refresh_prompt() {
     export MVN=`mvn_get`
-    if [ "x$VIRTUAL_ENV" = "x" ]; then
-	PY="base"
-    else
-	PY=`basename $VIRTUAL_ENV`
+    if [ "${MVN}" == "" ]; then
+	MVN="N/A"
     fi
-    export PS1="[\t $USERCOLOR\u\e[37;1m @ $HOSTCOLOR\H\e[0m :: mvn: $MVN python: $PY ] \w \n${git_prompt} $DONG "
+    if [ "x$VIRTUAL_ENV" = "x" ]; then
+	PY="Python VirtualEnv: base"
+    else
+	PY="Python VirtualEnv: $(basename $VIRTUAL_ENV)"
+    fi
+    if [ "${g}" == "true" ]; then
+	if echo $(__git_ps1) | grep -v ^$ > /dev/null 2>&1; then
+	    git_prompt='$(__git_ps1 " \[\033[1;32m\](%s)\[\033[0m\]")'
+	else
+	    git_prompt=" None"
+	fi
+    else
+	git_prompt="N/A"
+    fi
+    export PS1="\[\e[34;0m\]>| \t | ${PY} | Git Branch:${git_prompt} | Background Jobs: \j | MVN Config: ${MVN} |<\n(${SSH_TTY}) ${USERCOLOR}\u@${HOSTCOLOR}\H:\W ${DONG} "
     # awesome iTerm2 things http://www.iterm2.com/#/section/documentation/escape_codes
     # do something special for linux hosts
     if [ -f /etc/issue ]; then
@@ -134,3 +146,27 @@ export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=01;32:ln=01;37:bn=32:se=36"
 
 # bash completion for git, yo
 source ~/.git-completion.bash
+[[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
+
+export MARKPATH=$HOME/.marks
+function jump {
+    cd -P "$MARKPATH/$1" 2>/dev/null || echo "No such mark: $1"
+}
+function mark {
+    mkdir -p "$MARKPATH"; ln -s "$(pwd)" "$MARKPATH/$1"
+}
+function unmark {
+    rm -i "$MARKPATH/$1"
+}
+function marks {
+    ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
+}
+
+_completemarks() {
+      local curw=${COMP_WORDS[COMP_CWORD]}
+        local wordlist=$(find $MARKPATH -type l -printf "%f\n")
+	  COMPREPLY=($(compgen -W '${wordlist[@]}' -- "$curw"))
+	    return 0
+	}
+
+complete -F _completemarks jump unmark
