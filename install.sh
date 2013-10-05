@@ -21,3 +21,5 @@ done
 
 (cd $HOME/.vim && ./update)
 mkdir -p ~/.vimundo
+
+git submodule update --init
