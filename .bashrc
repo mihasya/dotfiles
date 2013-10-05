@@ -89,7 +89,7 @@ complete -cf sudo
 export TERM='xterm-256color'
 
 # turn off flow control so that vim can catch ctrl-s
-stty -ixoff
+stty -ixon
 
 export PATH="$HOME/bin:/opt/manual/bin:$PATH"
 BREW_EXISTS="$(brew --version > /dev/null 2>&1 || echo no)"
@@ -115,3 +115,4 @@ set -o vi
 # TODO: does this work on osx? test.. man page would seem to say no
 export GREP_OPTIONS="--binary-files=without-match --directories=skip --color=auto"
 export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=01;32:ln=01;37:bn=32:se=36"
+
