@@ -1,0 +1,22 @@
+snippet test
+	func TestFooBar()
+
+snippet asdfjkl
+	OH HAI
+	
+snippet gocheck
+	package ${1:package}
+
+	import (
+		. "launchpad.net/gocheck"
+		"testing"
+	)
+
+	// boilerplate
+	func Test${2:Subject}(t *testing.T) { TestingT(t) }
+	type $2Suite struct{}
+	var _ = Suite(&$2Suite{})
+
+	func (s *$2Suite) Test${3:firsttest}(c *C) {
+		${0}
+	}

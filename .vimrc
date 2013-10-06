@@ -4,6 +4,8 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
+set rtp+=~/.vim/mihasyasnippets
+
 Bundle 'gmarik/vundle'
 
 source ~/.vim/my_bundles
