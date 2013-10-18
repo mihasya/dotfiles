@@ -1,12 +1,3 @@
-" Vim color file
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last Change:	2001 Jul 23
-
-" This is the default color scheme.  It doesn't define the Normal
-" highlighting, it uses whatever the colors used to be.
-
-" Set 'background' back to the default.  The value can't always be estimated
-" and is then guessed.
 hi clear Normal
 set bg=dark
 
@@ -24,7 +15,8 @@ let colors_name = "mihasya"
 set background=dark
 hi NonText ctermfg=0
 hi LineNr 		cterm=none ctermfg=245 guibg=none gui=none
-hi CursorLine   cterm=none ctermbg=236 ctermfg=none guibg=darkred guifg=none
+hi CursorLine   cterm=none ctermbg=237 ctermfg=none
+hi Cursor   	cterm=inverse
 hi VertSplit    cterm=none ctermbg=240 ctermfg=240
 
 hi comment ctermfg=248
@@ -36,3 +28,9 @@ hi String ctermfg=176
 " hi string ctermfg=244
 " hi todo ctermbg=60
 hi Pmenu ctermbg=239
+hi TabLine ctermbg=240 cterm=none
+hi TabLineFill ctermfg=240
+hi TabLineSel cterm=bold ctermbg=168 ctermfg=16
+
+ hi StatusLineNC ctermfg=233 ctermbg=230
+hi StatusLine cterm=standout
