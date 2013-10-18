@@ -28,9 +28,9 @@ hi String ctermfg=176
 " hi string ctermfg=244
 " hi todo ctermbg=60
 hi Pmenu ctermbg=239
-hi TabLine ctermbg=240 cterm=none
-hi TabLineFill ctermfg=240
-hi TabLineSel cterm=bold ctermbg=168 ctermfg=16
+hi TabLine ctermbg=233 ctermfg=240 cterm=none
+hi TabLineFill ctermfg=233
+hi TabLineSel cterm=bold ctermbg=233 ctermfg=230
 
- hi StatusLineNC ctermfg=233 ctermbg=230
-hi StatusLine cterm=standout
+hi StatusLineNC ctermfg=233 ctermbg=240
+hi StatusLine ctermfg=233 ctermbg=230 cterm=standout
