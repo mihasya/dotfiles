@@ -27,7 +27,7 @@ set laststatus=2
 set incsearch
 
 colorscheme mihasya
-set showtabline=2
+set showtabline=1
 
 augroup mkd
 
