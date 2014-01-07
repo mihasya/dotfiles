@@ -25,3 +25,4 @@ Bundle 'tpope/vim-commentary'
 
 "syntax
 Bundle 'elubow/cql-vim'
+Bundle 'kchmck/vim-coffee-script'
