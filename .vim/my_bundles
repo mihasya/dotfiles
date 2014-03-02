@@ -8,6 +8,8 @@ Bundle 'yuratomo/dbg.vim'
 Bundle 'Shougo/vimproc'
 Bundle 'benmills/vimux'
 
+Bundle "bling/vim-airline"
+
 "snipmate + deps
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
