@@ -8,6 +8,8 @@ setlocal omnifunc=gocomplete#Complete
 
 nmap <buffer> ggt :call goutil#GoFindOrCreateTest()<CR>
 
+let g:gofmt_command="goimports"
+
 " automatically call gofmt on every save
 augroup gofmt
 	autocmd FileType go autocmd BufWritePre <buffer> silent Fmt
