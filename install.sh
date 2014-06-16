@@ -23,3 +23,10 @@ done
 mkdir -p ~/.vimundo
 
 git submodule update --init
+
+if [ ! -e ~/.rbenv ]; then
+	git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+	git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+	~/.rbenv/bin/rbenv install 1.9.3-p547
+	~/.rbenv/bin/rbenv global 1.9.3-p547
+fi

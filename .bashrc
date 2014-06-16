@@ -54,8 +54,9 @@ function refresh_prompt() {
 	PY="base"
     else
 	PY=`basename $VIRTUAL_ENV`
+	RB=`ruby --version | cut -d ' ' -f 2`
     fi
-    export PS1="[\t $USERCOLOR\u\e[37;1m @ $HOSTCOLOR\H\e[0m :: mvn: $MVN python: $PY rvm: $rvm_ruby_string ] \w \n$DONG "
+    export PS1="[\t $USERCOLOR\u\e[37;1m @ $HOSTCOLOR\H\e[0m :: mvn: $MVN python: $PY ruby: $RB ] \w \n$DONG "
     # awesome iTerm2 things http://www.iterm2.com/#/section/documentation/escape_codes
     # do something special for linux hosts
     if [ -f /etc/issue ]; then
@@ -117,6 +118,7 @@ export GREP_OPTIONS="--binary-files=without-match --directories=skip --color=aut
 export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=01;32:ln=01;37:bn=32:se=36"
 
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-source ~/.rvm/scripts/rvm
-rvm 1.9.3
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH" >> ~/.bash_profile
+eval "$(rbenv init -)"
+
