@@ -54,8 +54,8 @@ function refresh_prompt() {
 	PY="base"
     else
 	PY=`basename $VIRTUAL_ENV`
-	RB=`ruby --version | cut -d ' ' -f 2`
     fi
+    RB=`ruby --version | cut -d ' ' -f 2`
     export PS1="[\t $USERCOLOR\u\e[37;1m @ $HOSTCOLOR\H\e[0m :: mvn: $MVN python: $PY ruby: $RB ] \w \n$DONG "
     # awesome iTerm2 things http://www.iterm2.com/#/section/documentation/escape_codes
     # do something special for linux hosts
