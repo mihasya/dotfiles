@@ -125,3 +125,6 @@ eval "$(rbenv init -)"
 function set_gopack_gopath() {
     export GOPATH=$PWD/.gopack/vendor:$HOME
 }
+function set_godeps_gopath() {
+    export GOPATH=$PWD/Godeps/_workspace:$HOME
+}
