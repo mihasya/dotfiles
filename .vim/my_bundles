@@ -24,6 +24,8 @@ Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-unimpaired'
+
 
 "syntax
 Bundle 'elubow/cql-vim'
