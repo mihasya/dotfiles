@@ -86,3 +86,5 @@ nmap grc :VimuxCloseRunner<cr>
 " my preferred shortcuts for navigating autocomplete dropdown
 :inoremap <expr> <C-J> pumvisible() ? '<C-N>' : '<C-J>'
 :inoremap <expr> <C-K> pumvisible() ? '<C-P>' : '<C-K>'
+
+let mapleader=","

@@ -128,3 +128,7 @@ function set_gopack_gopath() {
 function set_godeps_gopath() {
     export GOPATH=$PWD/Godeps/_workspace:$HOME
 }
+
+export GOPATH=$HOME
+export GOBIN=$GOPATH/bin
+export GOROOT=/usr/local/go
