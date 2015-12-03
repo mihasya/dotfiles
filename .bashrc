@@ -122,6 +122,9 @@ export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=01;32:ln=01;37:bn=32:se=36"
 export PATH="$HOME/.rbenv/bin:$PATH" >> ~/.bash_profile
 eval "$(rbenv init -)"
 
+# chefdk
+export PATH="/opt/chefdk/bin:/opt/chefdk/embedded/bin:$PATH"
+
 function set_gopack_gopath() {
     export GOPATH=$PWD/.gopack/vendor:$HOME
 }
