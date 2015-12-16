@@ -24,6 +24,10 @@ mkdir -p ~/.vimundo
 
 git submodule update --init
 
+if [ ! -e ~/.oh-my-zsh/ ]; then
+	sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
+
 if [ ! -e ~/.rbenv ]; then
 	git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 	git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
