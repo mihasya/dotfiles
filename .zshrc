@@ -28,3 +28,9 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
+# wire up default docker-machine if one isn't loaded
+if [ "x$DOCKER_HOST" = "x" ]; then
+	eval "$(docker-machine env default)"
+fi
+
+eval `/usr/libexec/path_helper -s`
