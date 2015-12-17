@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SH_FILES="bashrc bash_aliases bash_profile zshrc zsh.d gitconfig gitignore vimrc vim gvimrc ackrc screenrc ctags turtle bin tmux.conf"
+SH_FILES="bashrc bash_aliases bash_profile zsh.d gitconfig gitignore vimrc vim gvimrc ackrc screenrc ctags turtle bin tmux.conf"
 BACKUP="backups/`date +'%Y%m%d-%H%M%S'`"
 SHDIR=$PWD
 
@@ -26,6 +26,8 @@ git submodule update --init
 
 if [ ! -e ~/.oh-my-zsh/ ]; then
 	sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+	rm ~/.zshrc
+	ln -s "$SHDIR/.zshrc" "$HOME/.zshrc"
 fi
 
 if [ ! -e ~/.rbenv ]; then

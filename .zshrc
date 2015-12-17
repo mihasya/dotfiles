@@ -1,6 +1,6 @@
 export ZSH=/Users/mihasya/.oh-my-zsh
 
-ZSH_THEME="robbyrussell"
+ZSH_THEME="mihasya"
 
 DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
