@@ -1,4 +1,5 @@
 export ZSH=/Users/mihasya/.oh-my-zsh
+set +x
 
 ZSH_THEME="mihasya"
 
@@ -42,3 +43,11 @@ eval `/usr/libexec/path_helper -s`
 # counter Sophos
 alias fixbrew='sudo chown mihasya:admin /usr/local/bin'
 alias brew='fixbrew && brew'
+
+
+# NVM commented out because it's dog slow
+# export NVM_DIR="$HOME/.nvm"
+# . "$(brew --prefix nvm)/nvm.sh"
+# rbenv commented out because it too is sorta slow
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"
