@@ -20,8 +20,12 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/Users/mihasya/src/go.datanerd.us/p/meatballs/infra/bin:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
+
+export GOPATH=$HOME
+export GO15VENDOREXPERIMENT=1
 
 source $ZSH/oh-my-zsh.sh
 
@@ -34,3 +38,7 @@ if [ "x$DOCKER_HOST" = "x" ]; then
 fi
 
 eval `/usr/libexec/path_helper -s`
+
+# counter Sophos
+alias fixbrew='sudo chown mihasya:admin /usr/local/bin'
+alias brew='fixbrew && brew'

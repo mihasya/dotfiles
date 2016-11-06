@@ -135,3 +135,6 @@ function set_godeps_gopath() {
 export GOPATH=$HOME
 export GOBIN=$GOPATH/bin
 export GOROOT=/usr/local/go
+
+# meatballs infra
+export PATH="/Users/mihasya/src/go.datanerd.us/p/meatballs/infra/bin:$PATH"
