@@ -1,5 +1,4 @@
-export ZSH=/Users/mihasya/.oh-my-zsh
-set +x
+export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="mihasya"
 
@@ -25,8 +24,11 @@ export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export PATH="/Users/mihasya/src/go.datanerd.us/p/meatballs/infra/bin:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
 
+# golang
 export GOPATH=$HOME
-export GO15VENDOREXPERIMENT=1
+export PATH="$HOME/bin:/usr/local/go/bin:$PATH"
+export GOPATH=$HOME
+export GOBIN=$HOME/bin
 
 source $ZSH/oh-my-zsh.sh
 
