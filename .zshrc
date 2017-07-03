@@ -20,7 +20,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 export PATH="/Users/mihasya/src/go.datanerd.us/p/meatballs/infra/bin:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
 
@@ -42,3 +42,4 @@ fi
 
 eval `/usr/libexec/path_helper -s`
 
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

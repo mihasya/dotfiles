@@ -138,3 +138,5 @@ export GOROOT=/usr/local/go
 
 # meatballs infra
 export PATH="/Users/mihasya/src/go.datanerd.us/p/meatballs/infra/bin:$PATH"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
