@@ -16,7 +16,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=~/.zsh.d
 
-plugins=(git)
+plugins=(git nrslcreds)
 
 # User configuration
 
@@ -43,3 +43,4 @@ fi
 eval `/usr/libexec/path_helper -s`
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+eval "$(rbenv init -)"
