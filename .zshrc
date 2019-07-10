@@ -1,4 +1,6 @@
+export ZSH_TMUX_AUTOSTART=true
 export ZSH=$HOME/.oh-my-zsh
+plugins=(git nrslcreds tmux)
 
 ZSH_THEME="mihasya"
 
@@ -15,8 +17,6 @@ HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=~/.zsh.d
-
-plugins=(git nrslcreds)
 
 # User configuration
 
@@ -39,3 +39,4 @@ eval `/usr/libexec/path_helper -s`
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 eval "$(rbenv init -)"
+
