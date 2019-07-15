@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SH_FILES="bashrc bash_aliases bash_profile zsh.d gitconfig gitignore vimrc vim gvimrc ackrc screenrc ctags turtle bin tmux.conf hammerspoon"
+SH_FILES="bashrc bash_aliases bash_profile zsh.d gitconfig gitignore vimrc vim gvimrc ackrc screenrc ctags turtle bin tmux.conf hammerspoon minikube-completion"
 BACKUP="backups/`date +'%Y%m%d-%H%M%S'`"
 SHDIR=$PWD
 
