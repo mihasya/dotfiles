@@ -1,6 +1,10 @@
 export ZSH_TMUX_AUTOSTART=true
 export ZSH=$HOME/.oh-my-zsh
-plugins=(git nrslcreds k8s tmux)
+plugins=(git nrslcreds k8s)
+
+if ! env | grep -qE "(VSCODE|IDEA|INTELLIJ)"; then
+    plugins+=(tmux)
+fi
 
 ZSH_THEME="mihasya"
 
