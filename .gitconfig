@@ -1,11 +1,13 @@
 [user]
-	name = mihasya
-	email = m@mihasya.com
+    name = mihasya
+    email = m@mihasya.com
 [core]
-	editor = vim
+    editor = vim
 [color]
-	ui = true
+    ui = true
 [push]
-   default = current
+    default = current
 [branch]
     autosetuprebase = always
+[url "ssh://git@github.com/"]
+    insteadof = https://github.com/
