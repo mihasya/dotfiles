@@ -9,3 +9,5 @@
 .vim/bundle
 .kitchen
 backups
+
+.zsh.d/plugins/*-creds

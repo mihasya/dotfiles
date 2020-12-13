@@ -1,6 +1,6 @@
 export ZSH_TMUX_AUTOSTART=true
 export ZSH=$HOME/.oh-my-zsh
-plugins=(git nrslcreds k8s github zsh-z)
+plugins=(git k8s github-creds zsh-z)
 
 if ! env | grep -qE "(VSCODE|IDEA|INTELLIJ)"; then
     plugins+=(tmux)
