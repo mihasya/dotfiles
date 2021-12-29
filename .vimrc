@@ -88,3 +88,6 @@ nmap grc :VimuxCloseRunner<cr>
 :inoremap <expr> <C-K> pumvisible() ? '<C-P>' : '<C-K>'
 
 let mapleader=","
+
+" remove depreciation warning
+let g:snipMate = { 'snippet_version' : 1 }
