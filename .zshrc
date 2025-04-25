@@ -2,7 +2,7 @@ export ZSH_TMUX_AUTOSTART=true
 export ZSH=$HOME/.oh-my-zsh
 # homebrew needs to go first so that things like tmux can be found
 export PATH="/opt/homebrew/bin:$PATH"
-plugins=(git zsh-z)
+plugins=(git zsh-z 1password)
 
 if ! env | grep -qE "(VSCODE|IDEA|INTELLIJ)"; then
     plugins+=(tmux)
@@ -57,3 +57,5 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"
 alias python=python3
 alias pip=pip3
+
+source <(echo "export OPENAI_API_KEY={{ op://Private/openai-api-key/password }}" | op inject)
