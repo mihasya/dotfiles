@@ -2,7 +2,7 @@ export ZSH_TMUX_AUTOSTART=true
 export ZSH=$HOME/.oh-my-zsh
 # homebrew needs to go first so that things like tmux can be found
 export PATH="/opt/homebrew/bin:$PATH"
-plugins=(git k8s github-creds zsh-z)
+plugins=(git zsh-z)
 
 if ! env | grep -qE "(VSCODE|IDEA|INTELLIJ)"; then
     plugins+=(tmux)
@@ -43,12 +43,17 @@ export LANG=en_US.UTF-8
 
 eval `/usr/libexec/path_helper -s`
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 which rbenv > /dev/null && eval "$(rbenv init -)"
 
 # nvm
+# lol... apparently I've installed nvm a few times over the years...
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-export PATH="/usr/local/opt/libpq/bin:$PATH"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+### PYTHON
+# use brew'd python
+export PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"
+alias python=python3
+alias pip=pip3
