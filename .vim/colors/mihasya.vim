@@ -14,10 +14,10 @@ let colors_name = "mihasya"
 " vim: sw=2
 set background=dark
 hi NonText ctermfg=0
-hi LineNr 		cterm=none ctermfg=245 guibg=none gui=none
-hi CursorLine   cterm=none ctermbg=237 ctermfg=none
+hi LineNr 		cterm=NONE ctermfg=245 guibg=NONE gui=NONE
+hi CursorLine   cterm=NONE ctermbg=237 ctermfg=NONE
 hi Cursor   	cterm=inverse
-hi VertSplit    cterm=none ctermbg=240 ctermfg=240
+hi VertSplit    cterm=NONE ctermbg=240 ctermfg=240
 
 hi comment ctermfg=248
 hi statement ctermfg=214
@@ -28,7 +28,7 @@ hi String ctermfg=176
 " hi string ctermfg=244
 " hi todo ctermbg=60
 hi Pmenu ctermbg=239
-hi TabLine ctermbg=233 ctermfg=240 cterm=none
+hi TabLine ctermbg=233 ctermfg=240 cterm=NONE
 hi TabLineFill ctermfg=233
 hi TabLineSel cterm=bold ctermbg=233 ctermfg=230
 
