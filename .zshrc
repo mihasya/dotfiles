@@ -2,7 +2,7 @@ export ZSH_TMUX_AUTOSTART=true
 export ZSH=$HOME/.oh-my-zsh
 # homebrew needs to go first so that things like tmux can be found
 export PATH="/opt/homebrew/bin:$PATH"
-plugins=(git zsh-z 1password)
+plugins=(git zsh-z)
 
 if ! env | grep -qE "(VSCODE|IDEA|INTELLIJ)"; then
     plugins+=(tmux)
@@ -46,10 +46,8 @@ eval `/usr/libexec/path_helper -s`
 which rbenv > /dev/null && eval "$(rbenv init -)"
 
 # nvm
-# lol... apparently I've installed nvm a few times over the years...
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 ### PYTHON
@@ -58,4 +56,13 @@ export PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"
 alias python=python3
 alias pip=pip3
 
-source <(echo "export OPENAI_API_KEY={{ op://Private/openai-api-key/password }}" | op inject)
+# psql cli
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+if which op &>/dev/null; then
+    alias load-openai-key="source <(echo \"export OPENAI_API_KEY={{ op://Private/openai-api-key/password }}\" | op inject --account $(op accounts list | grep mihasya.com | tr -s ' ' | cut -f 3 -d ' '))"
+else
+    echo "op binary not available, cannot setup credential loading functions"
+fi
+
+alias code=cursor
