@@ -1,6 +1,6 @@
 #!/bin/sh
 
-SH_FILES="bashrc bash_aliases bash_profile zsh.d gitconfig gitignore vimrc vim gvimrc ackrc screenrc ctags turtle bin tmux.conf hammerspoon minikube-completion"
+SH_FILES="bashrc bash_aliases bash_profile zsh.d gitconfig gitignore vimrc vim gvimrc ackrc screenrc ctags turtle tmux.conf hammerspoon minikube-completion"
 BACKUP="backups/`date +'%Y%m%d-%H%M%S'`"
 SHDIR=$PWD
 
@@ -35,4 +35,11 @@ if [ ! -e ~/.rbenv ]; then
 	git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 	~/.rbenv/bin/rbenv install 1.9.3-p547
 	~/.rbenv/bin/rbenv global 1.9.3-p547
+fi
+
+if [ ! -e ~/bin ]; then
+    echo "linking $SHDIR/bin to ~/bin"
+    ln -s $SHDIR/bin ~/bin
+else
+    echo "$HOME/bin already exists, skipping"
 fi

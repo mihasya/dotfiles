@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+set -e
+
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <repo-url>"
+    exit 1
+fi
+
+REPO_URL="$1"
+
+# Extract domain, owner and repo name from the URL
+# Supports both HTTPS and SSH URLs
+if [[ "$REPO_URL" =~ ^(https?://|git@)([^/:]+)[:/]([^/]+)/([^/.]+)(.git)?$ ]]; then
+    DOMAIN="${BASH_REMATCH[2]}"
+    OWNER="${BASH_REMATCH[3]}"
+    REPO="${BASH_REMATCH[4]}"
+else
+    echo "Error: Could not parse repository URL."
+    exit 1
+fi
+
+DEST_DIR="$HOME/src/$DOMAIN/$OWNER/$REPO"
+
+if [ -d "$DEST_DIR" ]; then
+    echo "Directory $DEST_DIR already exists. Aborting."
+    exit 1
+fi
+
+mkdir -p "$HOME/src/$DOMAIN/$OWNER"
+git clone "$REPO_URL" "$DEST_DIR"
+
+echo "Repository ${REPO_URL} cloned to $DEST_DIR"
