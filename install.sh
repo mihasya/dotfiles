@@ -21,9 +21,7 @@ for FILE in $SH_FILES; do
     ln -s "$SHDIR/.$FILE" "$HOME/.$FILE"
 done
 
-mkdir -p ~/.vimundo
-
-git submodule update --init
+find . -name dotfiles-init.sh | xargs dirname | xargs -I {} bash -c "echo \"initializing {}\" && cd {} && ./dotfiles-init.sh"
 
 if [ ! -e ~/.oh-my-zsh/ ]; then
 	sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
