@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 SH_FILES="bashrc bash_aliases bash_profile zsh.d gitconfig gitignore vimrc vim gvimrc ackrc screenrc ctags turtle tmux.conf hammerspoon minikube-completion"
 BACKUP="backups/`date +'%Y%m%d-%H%M%S'`"
 SHDIR=$PWD
@@ -19,7 +21,6 @@ for FILE in $SH_FILES; do
     ln -s "$SHDIR/.$FILE" "$HOME/.$FILE"
 done
 
-(cd $HOME/.vim && ./update)
 mkdir -p ~/.vimundo
 
 git submodule update --init
