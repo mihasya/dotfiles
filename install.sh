@@ -29,13 +29,6 @@ if [ ! -e ~/.oh-my-zsh/ ]; then
 	ln -s "$SHDIR/.zshrc" "$HOME/.zshrc"
 fi
 
-if [ ! -e ~/.rbenv ]; then
-	git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-	git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-	~/.rbenv/bin/rbenv install 1.9.3-p547
-	~/.rbenv/bin/rbenv global 1.9.3-p547
-fi
-
 if [ ! -e ~/bin ]; then
     echo "linking $SHDIR/bin to ~/bin"
     ln -s $SHDIR/bin ~/bin

@@ -32,7 +32,7 @@ export MANPATH="/usr/local/man:$MANPATH"
 
 # golang
 export GOPATH=$HOME
-export PATH="$HOME/bin:/opt/chefdk/embedded/bin:/usr/local/go/bin:$PATH"
+export PATH="/usr/local/go/bin:$PATH"
 export GOPATH=$HOME
 export GOBIN=$HOME/bin
 
