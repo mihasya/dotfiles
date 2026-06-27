@@ -66,3 +66,7 @@ else
 fi
 
 alias code=cursor
+alias get-gcloud-creds="gcloud auth login --update-adc"
+
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
